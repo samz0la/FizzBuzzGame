@@ -5,7 +5,25 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:padding="@dimen/layout_padding"
   tools:context=".MainActivity">
+
+
+  <TextView
+    android:id="@+id/correct_tally"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/CorrectTally"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"/>
+
+  <TextView
+    android:id="@+id/incorrect_tally"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/InCorrectTally"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintRight_toRightOf="parent"/>
 
   <TextView
     android:id="@+id/value_display"
@@ -15,12 +33,14 @@
     app:layout_constraintBottom_toTopOf="@+id/fizz_toggle"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
+    app:layout_constraintTop_toBottomOf="@id/correct_tally"/>
 
   <ToggleButton
     android:id="@+id/fizz_toggle"
     style="@style/FizzBuzzToggle"
     android:layout_height="wrap_content"
+    android:textOff="@string/fizz_off"
+    android:textOn="@string/fizz_on"
     app:layout_constraintRight_toLeftOf="@+id/buzz_toggle"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -30,6 +50,8 @@
     android:id="@+id/buzz_toggle"
 
     android:layout_height="wrap_content"
+    android:textOff="@string/buzz_off"
+    android:textOn="@string/buzz_on"
     style="@style/FizzBuzzToggle"
     app:layout_constraintLeft_toRightOf="@id/fizz_toggle"
     app:layout_constraintRight_toRightOf="parent"
